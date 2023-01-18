@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #eaeaea;
+  background: rgb(226, 155, 88);
+  background: linear-gradient(180deg, rgba(226, 155, 88, 1) 39%, rgba(182, 113, 71, 1) 100%);
+  color: #10214B;
   height: 100vh;
 }
 
@@ -27,12 +29,13 @@ code {
 
 :root {
   --orange: #FF5824;
+  --blue-dark: #10214B;
 }
 
 .container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 4rem 0;
   width: 95%;
 }

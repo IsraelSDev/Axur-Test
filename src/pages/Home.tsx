@@ -1,5 +1,6 @@
 import "../styles/Home.scss"
 import { motion } from "framer-motion"
+import digitandoImage from "../assets/difitando.webp"
 
 const Home = () => {
     return (<>
@@ -16,23 +17,21 @@ const Home = () => {
                 }}
             >
                 <div className="app_container">
+                    <img src={digitandoImage} alt="digitando" />
                     <motion.div
                         className='app_box'
                         whileHover={{ scale: 1.3 }}
                     >
-                        <iframe width={'100%'} height={'100%'} src="https://github.com/IsraelSDev">
-
-                        </iframe>
-                    </motion.div>
-                    <motion.div
-                        className='app_box'
-                        whileHover={{ scale: 1.3 }}
-                    >
-                        <iframe width={'100%'} height={'100%'} src="https://www.linkedin.com/in/israel-soares-0769191b2/"></iframe>
+                        <h2>O que posso fazer? </h2>
+                        <br />
+                        <br />
+                        <h3> - Você pode cadastrar algum termo para realizar uma busca.</h3>
+                        <br />
+                        <h3> - E também procurar por buscas já realizadas, através de seu código de identificação.</h3>
                     </motion.div>
                 </div>
             </motion.div >
-        </div>
+        </div >
     </>)
 }
 

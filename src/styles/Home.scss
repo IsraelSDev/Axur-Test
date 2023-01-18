@@ -1,27 +1,31 @@
 .app {
     width: 100%;
 
+
     .app_container {
         height: 80vh;
         padding: 2rem;
         display: flex;
         align-items: center;
         justify-content: space-evenly;
+
+        img {
+            width: 50%;
+            border-radius: 20px;
+        }
     }
 
     .app_box {
         width: 40%;
         text-align: center;
-        width: 600px;
-        height: 500px;
-        background: #ffffff82;
+        width: 400px;
+        height: 300px;
+        background: #cccc;
         border-radius: 30px;
         cursor: pointer;
+        padding: 2rem;
+        box-shadow: 10px 0px 20px -1px #ff57249f;
 
-        iframe {
-            border-radius: 20px;
-            box-shadow: 10px 0px 20px -1px rgb(255, 236, 196);
-        }
 
     }
 }
