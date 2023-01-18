@@ -1,7 +1,12 @@
 import '../styles/query.scss'
 import { motion } from "framer-motion"
+import { useState } from 'react';
+import loadingGif from "../assets/loading2.gif"
 
 const Query = () => {
+
+    const [loading, isLoading] = useState(true);
+
     return (
         <div className="container">
             <motion.div
@@ -14,8 +19,22 @@ const Query = () => {
                     }
                 }}
             >
-                <div className="query">
-                    Buscar
+                <div className='busca'>
+                    <h1>Cadastro de termos</h1>
+                    <br />
+                    <h3>Aqui você pode cadastrar novos termos para realizar uma busca completa por ele</h3>
+
+                    {
+                        !loading ? (<div className="form-group">
+                            <label htmlFor="title">Titulo
+                            </label>
+                            <br />
+                            <input id='title' type="text" placeholder='Informe o termo a ser pesquisado.' />
+                            <input type={"submit"} value="Cadastrar" />
+                        </div>) : (<div className='loading-container'>
+                            <img src={loadingGif} alt="loadin" />
+                        </div>)
+                    }
                 </div>
             </motion.div>
         </div>
