@@ -24,7 +24,7 @@ const NavBar = () => {
                         </motion.div>
                     </li>
                 </Link>
-                <Link to="/cadastro" >
+                <Link to="/Registro" >
                     <li>
                         <motion.div
                             className='app_box'
@@ -39,7 +39,7 @@ const NavBar = () => {
                         </motion.div>
                     </li>
                 </Link>
-                <Link to="/consulta" >
+                <Link to="/Consulta" >
                     <li>
                         <motion.div
                             className='app_box'

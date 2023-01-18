@@ -25,9 +25,9 @@ const Home = () => {
                         <h2>O que posso fazer? </h2>
                         <br />
                         <br />
-                        <h3> - Você pode cadastrar algum termo para realizar uma busca.</h3>
+                        <h3> - Você pode cadastrar uma solicitação de inspeção de termos.</h3>
                         <br />
-                        <h3> - E também procurar por buscas já realizadas, através de seu código de identificação.</h3>
+                        <h3> - E também acompanhar inspeções já cadastradas, através de seu código de identificação.</h3>
                     </motion.div>
                 </div>
             </motion.div >
