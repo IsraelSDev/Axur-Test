@@ -1,16 +1,18 @@
 import React from 'react';
-import './styles/App.scss';
-
+import "./styles/App.scss"
+import { BrowserRouter as Router } from 'react-router-dom';
+import AnimatedRoutes from './components/AnimatedRoutes';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
-
-  console.log("Process: " + process.env.REACT_APP_API_URL)
-
-  return (
+  return (<>
     <div className="App">
-      <h1>API URL: {process.env.REACT_APP_API_URL}</h1>
+      <Router>
+        <NavBar />
+        <AnimatedRoutes />
+      </Router >
     </div>
-  );
+  </>);
 }
 
 export default App;

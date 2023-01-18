@@ -1,0 +1,18 @@
+.NavBar {
+    width: 10%;
+    height: 100vh;
+    padding: 2rem;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 0px 20px -1px rgb(255, 236, 196);
+
+    ul {
+        list-style: none;
+
+        li {
+            padding: 2rem;
+        }
+    }
+}

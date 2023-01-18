@@ -1,0 +1,27 @@
+.app {
+    width: 100%;
+
+    .app_container {
+        height: 80vh;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .app_box {
+        width: 40%;
+        text-align: center;
+        width: 600px;
+        height: 500px;
+        background: #ffffff82;
+        border-radius: 30px;
+        cursor: pointer;
+
+        iframe {
+            border-radius: 20px;
+            box-shadow: 10px 0px 20px -1px rgb(255, 236, 196);
+        }
+
+    }
+}
