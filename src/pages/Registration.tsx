@@ -1,11 +1,25 @@
 import '../styles/registration.scss'
 import { motion } from "framer-motion";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import loadingGif from "../assets/loading.gif";
+import { useContext } from 'react';
+import TermosContext from '../contexts/termosContext';
 
 const Registration = () => {
 
-    const [loading, isLoading] = useState(true);
+    const [loading, isLoading] = useState(false);
+    const termos = useContext(TermosContext);
+
+    useEffect(() => {
+        termos.setState({
+            id: '1',
+            status: 'active',
+            links: ['1', '2', '3']
+        })
+        console.log(termos.state)
+    }, [])
+
+
 
     return (
         <div className="container">
