@@ -1,23 +1,24 @@
-
 import { createContext } from "react";
 
 type termosType = {
-    id: string,
-    status: string,
-    links: string[]
-}
+  id: number;
+  termo: string;
+  status: string;
+  links: string[];
+};
 type PropsTermosContext = {
-    state: termosType,
-    setState: React.Dispatch<React.SetStateAction<termosType>>
-}
+  state: termosType[];
+  setState: React.Dispatch<React.SetStateAction<termosType>>;
+};
 
 const DEFAULT_TERMOS = {
-    state: {
-        id: "1",
-        status: "active",
-        links: ["link1", "link2"]
-    },
-    setState: () => { },
+  state: [{
+    id: 0,
+    termo: "",
+    status: "",
+    links: [],
+  }],
+  setState: () => { },
 }
 
 const TermosContext = createContext<PropsTermosContext>(DEFAULT_TERMOS);

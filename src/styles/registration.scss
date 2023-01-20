@@ -1,95 +1,95 @@
 .registration {
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    width: 80%;
+  }
+
+  .registration-box {
+    width: 60%;
+    height: 600px;
+    margin-top: 3rem;
     text-align: center;
+    background-color: transparent;
+    background-image: url("../assets/notebook.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 30px;
 
+    cursor: pointer;
 
-    h1 {
-        width: 80%;
-    }
+    .form-group {
+      margin: 10rem auto;
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      justify-content: center;
+      align-items: center;
 
-    .registration-box {
-        width: 60%;
-        height: 600px;
-        margin-top: 3rem;
-        text-align: center;
-        background-color: transparent;
-        background-image: url('../assets/notebook.png');
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        border-radius: 30px;
+      label {
+        font-size: 2rem;
+        font-weight: bold;
+      }
 
-        cursor: pointer;
+      input {
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1.3rem;
+        outline: 0;
 
-        .form-group {
-            margin: 10rem auto;
-            width: 80%;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            justify-content: center;
-            align-items: center;
-
-            label {
-                font-size: 2rem;
-                font-weight: bold;
-            }
-
-            input {
-                border-radius: 5px;
-                padding: 10px;
-                font-size: 1.3rem;
-                outline: 0;
-
-                &[type="text"] {
-                    width: 70%;
-                    height: 50px;
-                    background-color: #E29B58;
-                    font-weight: bold;
-                }
-
-                &[type="submit"] {
-                    margin: 2rem auto;
-                    color: white;
-                    width: 40%;
-                    height: 50px;
-                    cursor: pointer;
-                    border: 0;
-                    background-color: #cc6a0f;
-
-                    &:hover {
-                        transition: 0.2s;
-                        background-color: #b3763c;
-                        box-shadow: 10px 0px 20px -1px #ff57249f;
-
-                    }
-                }
-
-                &::placeholder {
-                    color: white;
-                    letter-spacing: 0.5px;
-                }
-            }
+        &[type="text"] {
+          width: 70%;
+          height: 50px;
+          background-color: #e29b58;
+          font-weight: bold;
         }
 
-        .loading-container {
-            width: 100%;
-            display: flex;
-            height: 550px;
-            align-items: center;
+        &[type="submit"] {
+          margin: 2rem auto;
+          color: white;
+          width: 40%;
+          height: 50px;
+          cursor: pointer;
+          border: 0;
+          background-color: #cc6a0f;
 
-            img {
-                margin: 0 auto;
-                width: 200px;
-                height: 200px;
-            }
+          &:hover {
+            transition: 0.2s;
+            background-color: #b3763c;
+            box-shadow: 10px 0px 20px -1px #ff57249f;
+          }
 
-            // background-color: blue;
-
+          &[disabled] {
+            background-color: #c2c2c276;
+            cursor: not-allowed;
+          }
         }
+
+        &::placeholder {
+          color: white;
+          letter-spacing: 0.5px;
+        }
+      }
     }
+
+    .loading-container {
+      width: 100%;
+      display: flex;
+      height: 550px;
+      align-items: center;
+
+      img {
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
 }

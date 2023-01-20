@@ -1,32 +1,29 @@
 .app {
-    width: 100%;
+  width: 100%;
 
+  .app_container {
+    height: 80vh;
+    max-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 
-    .app_container {
-        height: 80vh;
-        max-height: 100vh;
-        padding: 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-
-        img {
-            width: 50%;
-            border-radius: 20px;
-        }
+    img {
+      width: 50%;
+      border-radius: 20px;
     }
+  }
 
-    .app_box {
-        width: 40%;
-        text-align: center;
-        width: 400px;
-        height: 300px;
-        background: #cccc;
-        border-radius: 30px;
-        cursor: pointer;
-        padding: 2rem;
-        box-shadow: 10px 0px 20px -1px #ff57249f;
-
-
-    }
+  .app_box {
+    width: 40%;
+    text-align: center;
+    width: 400px;
+    height: 300px;
+    background: #cccc;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 2rem;
+    box-shadow: 10px 0px 20px -1px #ff57249f;
+  }
 }
