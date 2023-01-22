@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import homeIcon from "../../assets/casa.webp";
 import addIcon from "../../assets/adicionar.webp";
 import searchIcon from "../../assets/search.webp";
+import Anotation from "../Anotation/Anotation"
 import { motion } from "framer-motion";
 
 const NavBar = () => {
@@ -54,6 +55,9 @@ const NavBar = () => {
             </motion.div>
           </li>
         </Link>
+        <li>
+          <Anotation />
+        </li>
       </ul>
     </aside>
   );

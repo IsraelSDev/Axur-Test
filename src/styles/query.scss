@@ -53,6 +53,11 @@
           background-color: #b3763c;
           box-shadow: 10px 0px 20px -1px #ff57249f;
         }
+
+        &[disabled] {
+          background-color: #c2c2c276;
+          cursor: not-allowed;
+        }
       }
 
       &::placeholder {

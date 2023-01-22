@@ -93,3 +93,41 @@
     }
   }
 }
+
+.result-screen {
+  width: 60%;
+  background-color: transparent;
+  text-align: center;
+  cursor: initial;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15% auto;
+
+  table {
+    padding: 2rem 0;
+  }
+
+  button {
+    margin: 2rem auto;
+    color: white;
+    width: 40%;
+    height: 50px;
+    cursor: pointer;
+    border: 0;
+    background-color: #cc6a0f;
+
+    &:hover {
+      transition: 0.2s;
+      background-color: #b3763c;
+      box-shadow: 10px 0px 20px -1px #ff57249f;
+    }
+
+    &[disabled] {
+      background-color: #c2c2c276;
+      cursor: not-allowed;
+    }
+  }
+}

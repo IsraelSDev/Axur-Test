@@ -1,22 +1,39 @@
 import "../styles/query.scss";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import React, { useState } from "react";
 import loadingGif from "../assets/loading2.gif";
 import { useContext } from "react";
 import TermosContext from "../contexts/termosContext";
 
-const Query = () => {
-  const [loading, isLoading] = useState(false);
-  const [result, hasResult] = useState(false);
+const Query: React.FunctionComponent = () => {
+  const [loading, isLoading] = useState<boolean>(false);
+  const [result, hasResult] = useState<boolean>(true);
+  const [empty, isEmpty] = useState<boolean>(true);
+  const [id, setID] = useState<string>("")
 
   const resetConsult = () => {
     isLoading(false);
+    isEmpty(true);
     hasResult(false);
   };
 
+  const handleID = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setID(e.target.value);
+    if (e.target.value.trim() !== '') {
+      isEmpty(false);
+    } else {
+      isEmpty(true);
+    }
+  }
+
+  const getById = () => {
+    isLoading(true);
+    isEmpty(true);
+    alert("Chamando")
+  }
+
   const termos = useContext(TermosContext);
 
-  console.log(termos);
 
   return (
     <div className="container">
@@ -56,8 +73,11 @@ const Query = () => {
                     type="text"
                     placeholder="Informe o ID para ver os resultados."
                     required
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      handleID(e)
+                    }}
                   />
-                  <input type={"submit"} value="Consultar" />
+                  <input type={"submit"} value="Consultar" disabled={empty} onClick={getById} />
                 </div>
               )}
             </div>
