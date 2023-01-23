@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const NavBar = () => {
   return (
-    <aside className="NavBar">
+    <aside className="NavBar" data-testid="menu" >
       <ul>
         <Link to="/">
           <li>

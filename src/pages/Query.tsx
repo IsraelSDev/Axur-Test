@@ -2,14 +2,15 @@ import "../styles/query.scss";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import loadingGif from "../assets/loading2.gif";
-import { useContext } from "react";
-import TermosContext from "../contexts/termosContext";
+import BuscarService from "../services/BuscarService";
+import { responseI } from "../models/buscarTypes";
 
 const Query: React.FunctionComponent = () => {
   const [loading, isLoading] = useState<boolean>(false);
-  const [result, hasResult] = useState<boolean>(true);
+  const [result, hasResult] = useState<boolean>(false);
   const [empty, isEmpty] = useState<boolean>(true);
   const [id, setID] = useState<string>("")
+  const [dataResult, handleDataResult] = useState<responseI>();
 
   const resetConsult = () => {
     isLoading(false);
@@ -29,11 +30,20 @@ const Query: React.FunctionComponent = () => {
   const getById = () => {
     isLoading(true);
     isEmpty(true);
-    alert("Chamando")
+    BuscarService({ id: id.trim() }).then((response: any) => {
+      console.log(response)
+      if (response.status === 200) {
+        hasResult(true)
+        handleDataResult(response?.data);
+        isLoading(false);
+      }
+    }).catch(error => {
+      alert(error)
+      isLoading(false);
+    }).finally(() => {
+      isLoading(false);
+    })
   }
-
-  const termos = useContext(TermosContext);
-
 
   return (
     <div className="container">
@@ -61,7 +71,14 @@ const Query: React.FunctionComponent = () => {
               {result ? (
                 <div className="result-container">
                   <h1>Resultados:</h1>
-                  <div className="result-box"></div>
+                  <div className="result-box">
+                    <h3>Id: {dataResult?.id}</h3>
+                    <h3>Status da pesquisa: {dataResult?.status}</h3>
+                    <h3>Urls: {dataResult?.urls?.map((url: string, index: number) => {
+                      return (<p key={index}>{url.length > 0 ? <a href={url} target={"_blank"} rel="noreferrer">{url}</a> : <p>Nada ainda, tente essa mesma busca mais tarde.</p>}</p>
+                      )
+                    })}</h3>
+                  </div>
                   <button onClick={resetConsult}>Nova Consulta</button>
                 </div>
               ) : (

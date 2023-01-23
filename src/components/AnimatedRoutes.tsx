@@ -4,8 +4,14 @@ import Query from "../pages/Query";
 import { Route, Routes, useLocation, Navigate, Link } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
-const AnimatedRoutes = () => {
 
+export const LocationDisplay = () => {
+  const location = useLocation()
+
+  return <div data-testid="location-display">{location.pathname}</div>
+}
+
+const AnimatedRoutes = () => {
   const location = useLocation();
 
   return (

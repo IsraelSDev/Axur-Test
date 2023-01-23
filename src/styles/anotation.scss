@@ -12,6 +12,7 @@
     position: relative;
     display: inline-block;
 
+
     .item-list {
         display: flex;
         align-items: center;
@@ -34,7 +35,9 @@
         opacity: 0;
         user-select: none;
 
+
         div {
+
             padding: 10px 30px;
             cursor: pointer;
         }
@@ -80,6 +83,8 @@
 }
 
 .table-list {
+
+
     thead {
         font-weight: bold;
     }

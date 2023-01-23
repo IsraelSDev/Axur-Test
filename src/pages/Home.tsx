@@ -18,7 +18,7 @@ const Home = () => {
             },
           }}
         >
-          <div className="app_container">
+          <div className="app_container" >
             <img src={digitandoImage} alt="digitando" />
             <motion.div className="app_box" whileHover={{ scale: 1.3 }}>
               <h2>O que posso fazer? </h2>

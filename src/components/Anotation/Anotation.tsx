@@ -1,13 +1,11 @@
 import '../../styles/anotation.scss';
-import { motion } from "framer-motion";
 import anotationIcon from "../../assets/anotation.png";
-import { useEffect, useState, useContext } from 'react';
+import { useContext } from 'react';
 import TermosContext from "../../contexts/termosContext"
 
 const Anotation: React.FC = () => {
 
     const { listTermos } = useContext(TermosContext);
-
 
     return (
         <div className='anotation-container' >
@@ -30,9 +28,9 @@ const Anotation: React.FC = () => {
                         </thead>
                         <tbody>
                             {
-                                listTermos.map((termo: any) => {
+                                listTermos?.map((termo: any, index: number) => {
                                     return (
-                                        <tr>
+                                        <tr key={index}>
                                             <td>{termo?.termo}</td>
                                             <td>{termo?.id}</td>
                                         </tr>
@@ -41,7 +39,6 @@ const Anotation: React.FC = () => {
                             }
                         </tbody>
                     </table>
-
                 </div>
             </label >
         </div >

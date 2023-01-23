@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <div className="App">
+      <div className="App" data-testid="app">
         <TermosContext.Provider value={{ listTermos, handleListTermos }}>
           <Router>
             <NavBar />

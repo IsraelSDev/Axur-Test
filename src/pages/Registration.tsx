@@ -1,11 +1,11 @@
 import "../styles/registration.scss";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import loadingGif from "../assets/loading.gif";
 import { useContext } from "react";
 import TermosContext from "../contexts/termosContext";
 import RegistroService from "../services/RegistroService";
-import { resultPesquisaI } from "../types/cadastroTypes";
+import { resultPesquisaI } from "../models/cadastroTypes";
 
 const Registration: React.FunctionComponent = () => {
 
@@ -43,9 +43,9 @@ const Registration: React.FunctionComponent = () => {
         })
         showResultScreen(true);
         termos.handleListTermos([...termos.listTermos, newTermosList])
-        sessionStorage.setItem('list-termos', JSON.stringify(termos.listTermos));
       }
     }).catch(error => {
+      isLoading(false);
       alert(error.response?.data?.message)
     }).finally(() => {
       isLoading(false);
@@ -76,7 +76,7 @@ const Registration: React.FunctionComponent = () => {
           },
         }}
       >
-        <div className="registration">
+        <div className="registration" data-testid="registro">
           <h1>Cadastro de termos</h1>
           <br />
           <h3>
@@ -133,7 +133,7 @@ const Registration: React.FunctionComponent = () => {
                     </tr>
                   </tbody>
                 </table>
-                <button onClick={() => reset}>Novo Cadastro</button>
+                <button onClick={() => reset()}>Novo Cadastro</button>
                 <p>
                   &#x1F448; Também foi adicionada essas informações ao seu bloco de notas
                 </p>
