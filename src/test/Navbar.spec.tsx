@@ -1,3 +1,4 @@
+import React from "react";
 import NavBar from "../components/NavBar/NavBar";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter as Router } from 'react-router-dom';
@@ -25,7 +26,7 @@ describe("NavBar Component", () => {
         render(<Router>
             <Home />
         </Router>)
-        expect(screen.getByText('O que posso fazer?')).toBeInTheDocument();
+        expect(screen.getByText('O que posso fazer?')).toBeTruthy();
     })
 
     it("Ir para a rota de Cadastro ao clicar no ícone", () => {
@@ -37,7 +38,7 @@ describe("NavBar Component", () => {
         render(<Router>
             <Registration />
         </Router>)
-        // expect(screen.getByText('Cadastro de termos')).toBeInTheDocument();
+        expect(screen.getByText('Cadastro de termos')).toBeTruthy();
     })
 
 })
