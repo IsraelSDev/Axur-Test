@@ -79,7 +79,7 @@ const Query: React.FunctionComponent = () => {
                       )
                     })}</h3>
                   </div>
-                  <button onClick={resetConsult}>Nova Consulta</button>
+                  <button data-testid="reset-btn" onClick={resetConsult}>Nova Consulta</button>
                 </div>
               ) : (
                 <div className="form-group">
@@ -94,12 +94,12 @@ const Query: React.FunctionComponent = () => {
                       handleID(e)
                     }}
                   />
-                  <input type={"submit"} value="Consultar" disabled={empty} onClick={getById} />
+                  <input data-testid="btn-busca" type={"submit"} value="Consultar" disabled={empty} onClick={getById} />
                 </div>
               )}
             </div>
           ) : (
-            <div className="loading-container">
+            <div className="loading-container" data-testid="loading-gif">
               <img src={loadingGif} alt="loadin" />
             </div>
           )}
