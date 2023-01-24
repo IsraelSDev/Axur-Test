@@ -1,3 +1,4 @@
+import React from "react";
 import "../styles/Home.scss";
 import { motion } from "framer-motion";
 import digitandoImage from "../assets/difitando.webp";

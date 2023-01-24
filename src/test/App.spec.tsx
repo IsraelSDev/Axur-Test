@@ -7,7 +7,7 @@ import Home from "../pages/Home";
 import Registration from "../pages/Registration";
 
 
-describe("NavBar Component", () => {
+describe("Teste - Aplicação e seus Components", () => {
     it("Componente NavBar existe", () => {
         render(<Router>
             <NavBar />
@@ -40,5 +40,7 @@ describe("NavBar Component", () => {
         </Router>)
         expect(screen.getByText('Cadastro de termos')).toBeTruthy();
     })
+
+    it("")
 
 })

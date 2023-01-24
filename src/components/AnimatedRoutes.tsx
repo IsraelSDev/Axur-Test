@@ -1,3 +1,4 @@
+import React from "react";
 import Home from "../pages/Home";
 import Registration from "../pages//Registration";
 import Query from "../pages/Query";

@@ -1,3 +1,4 @@
+import React from "react";
 import '../../styles/anotation.scss';
 import anotationIcon from "../../assets/anotation.png";
 import { useContext } from 'react';

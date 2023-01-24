@@ -1,6 +1,7 @@
+import React from "react";
 import "../styles/registration.scss";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import { useState } from "react";
 import loadingGif from "../assets/loading.gif";
 import { useContext } from "react";
 import TermosContext from "../contexts/termosContext";
@@ -96,7 +97,7 @@ const Registration: React.FunctionComponent = () => {
                     (e: React.ChangeEvent<HTMLInputElement>) => { handleTermos(e) }
                   }
                 />
-                <input disabled={empty} type={"submit"} value="Cadastrar" onClick={(e: React.MouseEvent) => {
+                <input disabled={empty} type={"submit"} value="Cadastrar" onClick={() => {
                   addTermos()
                 }} />
               </div>
