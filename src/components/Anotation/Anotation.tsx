@@ -27,7 +27,7 @@ const Anotation: React.FC = () => {
                                 </td>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody data-testid="list-anotation">
                             {
                                 listTermos?.map((termo: any, index: number) => {
                                     return (

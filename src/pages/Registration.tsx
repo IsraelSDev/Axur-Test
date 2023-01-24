@@ -28,29 +28,29 @@ const Registration: React.FunctionComponent = () => {
       isEmpty(true);
     }
   }
-  const addTermos: Function = () => {
-    isLoading(true)
-    const cadTermo = RegistroService({ 'keyword': termo })
+  const addTermos = () => {
+    isLoading(true);
+    const cadTermo = RegistroService({ 'keyword': termo });
     cadTermo.then(value => {
       if (value.status === 200) {
         let newTermosList: any = {
           id: value.data?.id,
           termo: termo,
           status: "cadastrado",
-        }
+        };
         handleResultPesquisa({
           id: value.data.id,
           termo: termo
-        })
+        });
         showResultScreen(true);
-        termos.handleListTermos([...termos.listTermos, newTermosList])
+        termos.handleListTermos([...termos.listTermos, newTermosList]);
       }
     }).catch(error => {
       isLoading(false);
-      alert(error.response?.data?.message)
+      alert(error.response?.data?.message);
     }).finally(() => {
       isLoading(false);
-    })
+    });
   }
 
   const reset: Function = () => {
@@ -96,22 +96,23 @@ const Registration: React.FunctionComponent = () => {
                   onChange={
                     (e: React.ChangeEvent<HTMLInputElement>) => { handleTermos(e) }
                   }
+                  value={termo}
                 />
-                <input disabled={empty} type={"submit"} value="Cadastrar" onClick={() => {
+                <input disabled={empty} data-testid="cad-button" type={"submit"} value="Cadastrar" onClick={() => {
                   addTermos()
                 }} />
               </div>
             ) : loading && !resultScreen ? (
-              <div className="loading-container">
+              <div className="loading-container" data-testid="loading-gif">
                 <img src={loadingGif} alt="loading" />
               </div>
             ) : (
               <div className="result-screen">
-                <h1>Cadastrada com Sucesso!!!</h1>
+                <h1 >Cadastrada com Sucesso!!!</h1>
                 <table className='table-list'>
                   <thead>
                     <tr>
-                      <td>
+                      <td data-testid="sucesso-cadastro">
                         Palavra pesquisada &nbsp;&nbsp;
                       </td>
                       <td>
@@ -134,7 +135,7 @@ const Registration: React.FunctionComponent = () => {
                     </tr>
                   </tbody>
                 </table>
-                <button onClick={() => reset()}>Novo Cadastro</button>
+                <button data-testid="reset-btn" onClick={() => reset()}>Novo Cadastro</button>
                 <p>
                   &#x1F448; Também foi adicionada essas informações ao seu bloco de notas
                 </p>
