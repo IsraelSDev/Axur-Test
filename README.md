@@ -1,6 +1,6 @@
 # Israel Test - Web Link
 
-This project was bootstrapped with [Israel Test](https://axur-test.vercel.app/Dashboard).
+This project was bootstrapped with [Israel Test](https://israel-test.vercel.app/).
 
 ## Available Scripts
 
